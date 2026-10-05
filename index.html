@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ELIVA – Embodied Learning in Visual Arts. Forschungsschwerpunkt zu verkörpertem Lehren und Lernen im Kunstunterricht an der Pädagogischen Hochschule Ludwigsburg, mit dem Teilprojekt Kunst ohne Sprache.">
+<meta property="og:title" content="ELIVA – Embodied Learning in Visual Arts">
+<meta property="og:description" content="Forschungsschwerpunkt zu verkörpertem Lehren und Lernen im Kunstunterricht, PH Ludwigsburg.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eliva.org/">
+<link rel="canonical" href="https://eliva.org/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%239A9A9A'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-weight='700' font-size='18' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+<title>ELIVA – Embodied Learning in Visual Arts</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+<style>
+/* Layout nach makingimages.net: helle Seite, weißes Blatt (960px) zentriert, Logo-Quadrat oben links, horizontale Navigation, viel Weißraum. Bewusst einheitlich hell. */
+:root{
+  --page:#FAFAFA;        /* Seitenhintergrund */
+  --sheet:#FFFFFF;       /* Blatt */
+  --fg:#444444;          /* Fließtext */
+  --fg-soft:#979797;     /* Titelgrau */
+  --fg-muted:#777777;
+  --line:#E6E6E6;
+  --accent:#00667B;      /* Petrol: aktive Navigation, Links */
+  --slate:#9A9A9A;       /* Logo-Punkt, grau */
+  --sans:"Roboto",Arial,Helvetica,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{background:var(--page);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;background:var(--sheet);padding-block:0 3rem;padding-inline:clamp(16px,5vw,70px);min-height:100vh}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance;line-height:1.2}
+h2{font-size:clamp(1.5rem,3vw,2.05rem);text-transform:uppercase;color:var(--fg)}
+h3{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;color:var(--fg)}
+p{margin:0}
+.lede{font-size:1rem}
+.eyebrow{display:none}
+.small{font-size:.92rem;color:var(--fg-muted)}
+
+/* Kopf: Logo + Navigation */
+header{padding-block:.9rem 0}
+.top{display:flex;gap:1.6rem;align-items:flex-start;flex-wrap:wrap}
+.brand{width:136px;height:136px;flex:0 0 auto;background:var(--slate);border-radius:50%;display:block;text-decoration:none;font-size:0;color:transparent}
+.brand:hover{text-decoration:none}
+.top-right{display:flex;flex-direction:column;gap:.7rem;flex:1 1 320px;min-width:0;padding-top:1.9rem}
+.inst{font-size:.78rem;text-transform:uppercase;color:var(--fg-muted);letter-spacing:.02em}
+nav.side ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 1.6rem}
+nav.side a{display:block;font-size:.85rem;text-transform:uppercase;color:var(--fg);padding:.35rem 0 .3rem;border-bottom:1.6px solid transparent}
+nav.side a:hover{text-decoration:none;color:var(--accent)}
+nav.side a.on{color:var(--accent);border-bottom-color:var(--accent)}
+.langs{display:inline-flex;gap:0}
+.langs button{font:inherit;font-size:.78rem;text-transform:uppercase;padding:.2rem .55rem;background:none;border:0;color:var(--fg-muted);cursor:pointer;border-bottom:1.6px solid transparent}
+.langs button[aria-pressed="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* Titelbereich */
+.hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(2rem,4vw,3rem);display:grid;gap:2.2rem}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:700;text-transform:uppercase;color:var(--fg-soft);text-align:center;letter-spacing:.02em;line-height:1.15}
+.hero h1 span{display:block;font-size:clamp(1rem,1.8vw,1.25rem);font-weight:400;text-transform:none;letter-spacing:0;margin-top:.8rem;color:var(--fg-soft)}
+.hero-meta{display:grid;gap:1.6rem;max-width:62ch}
+.hero-meta dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.2rem;margin:0;font-size:.95rem}
+.hero-meta dt{font-weight:700;text-transform:uppercase;font-size:.78rem;padding-top:.15rem;color:var(--fg)}
+.hero-meta dd{margin:0}
+
+/* Inhalt */
+main{display:block}
+.content{min-width:0}
+section{padding-block:2.6rem 2.8rem;border-top:1px solid var(--line);scroll-margin-top:1rem}
+.sec-head{display:grid;gap:.9rem;margin-bottom:1.5rem;max-width:62ch}
+.prose{max-width:62ch;display:grid;gap:1.1rem}
+
+/* Forschungslinien */
+.lines{display:grid;gap:0}
+.line{display:grid;grid-template-columns:150px minmax(0,1fr);gap:.6rem 1.5rem;padding-block:1.3rem;border-top:1px solid var(--line)}
+.line:first-child{border-top:0;padding-top:0}
+.line.main .body{padding-left:0}
+.status{font-size:.78rem;text-transform:uppercase;color:var(--fg-muted);padding-top:.2rem}
+.status.run{color:var(--accent);font-weight:700}
+.line .body{display:grid;gap:.5rem}
+.line .body p{max-width:62ch}
+.line .body h3{font-size:1rem}
+.orig{font-size:.85rem;color:var(--fg-muted)}
+.orig:empty{display:none}
+
+/* Kontakt */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem 2.5rem;max-width:62ch}
+.contact dl{margin:0;display:grid;gap:.3rem}
+.contact dt{font-weight:700;text-transform:uppercase;font-size:.78rem;margin-top:.6rem}
+.contact dt:first-child{margin-top:0}
+.contact dd{margin:0}
+.copy{font:inherit;background:none;border:1px solid var(--line);border-radius:2px;padding:.05rem .5rem;margin-left:.5rem;cursor:pointer;color:var(--fg-muted);font-size:.75rem;text-transform:uppercase}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+footer{border-top:1px solid var(--line);padding-block:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem;justify-content:space-between}
+footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
+
+@media (max-width:640px){
+  .brand{width:96px;height:96px}
+  .top-right{padding-top:.2rem}
+  .line{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="top">
+    <a class="brand" href="#top" aria-label="ELIVA – zum Seitenanfang"></a>
+    <div class="top-right">
+      <span class="inst" data-i18n="inst"></span>
+<nav class="side" aria-label="Abschnitte">
+    <ol>
+      <li><a href="#idee" data-i18n="n_idee"></a></li>
+      <li><a href="#linien" data-i18n="n_linien"></a></li>
+      <li><a href="#zeigen" data-i18n="n_zeigen"></a></li>
+      <li><a href="#methode" data-i18n="n_methode"></a></li>
+      <li><a href="#kontakt" data-i18n="n_kontakt"></a></li>
+    </ol>
+  </nav>
+      <div class="langs" role="group" aria-label="Sprache / Language / Idioma">
+        <button type="button" data-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </div>
+  <div class="hero" id="top">
+    <div>
+      <h1>ELIVA<span data-i18n="sub"></span></h1>
+    </div>
+    <div class="hero-meta">
+      <p class="lede" data-i18n="lede"></p>
+      <dl>
+        <dt data-i18n="k_field"></dt><dd data-i18n="v_field"></dd>
+        <dt data-i18n="k_approach"></dt><dd data-i18n="v_approach"></dd>
+        <dt data-i18n="k_core"></dt><dd data-i18n="v_core"></dd>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="content">
+
+  <section id="idee">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="n_idee"></p>
+      <h2 data-i18n="idee_h"></h2>
+    </div>
+    <div class="prose">
+      <p data-i18n="idee_p1"></p>
+      <p data-i18n="idee_p2"></p>
+      <p data-i18n="idee_p3"></p>
+    </div>
+  </section>
+
+  <section id="linien">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="n_linien"></p>
+      <h2 data-i18n="linien_h"></h2>
+    </div>
+    <div class="lines">
+      <article class="line main" id="kos">
+        <div><span class="status run" data-i18n="st_run"></span></div>
+        <div class="body">
+          <h3 data-i18n="kos_h"></h3>
+          <p data-i18n="kos_p"></p>
+          <p class="orig" data-i18n="kos_orig"></p>
+        </div>
+      </article>
+      <article class="line">
+        <div><span class="status" data-i18n="st_ma"></span></div>
+        <div class="body">
+          <h3 data-i18n="ma1_h"></h3>
+          <p data-i18n="ma1_p"></p>
+          <p class="orig" data-i18n="ma1_orig"></p>
+        </div>
+      </article>
+      <article class="line">
+        <div><span class="status" data-i18n="st_ma"></span></div>
+        <div class="body">
+          <h3 data-i18n="ma2_h"></h3>
+          <p data-i18n="ma2_p"></p>
+          <p class="orig" data-i18n="ma2_orig"></p>
+        </div>
+      </article>
+      <article class="line">
+        <div><span class="status" data-i18n="st_ma"></span></div>
+        <div class="body">
+          <h3 data-i18n="ma3_h"></h3>
+          <p data-i18n="ma3_p"></p>
+          <p class="orig" data-i18n="ma3_orig"></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="zeigen">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="zeigen_eyebrow"></p>
+      <h2 data-i18n="zeigen_h"></h2>
+      <p class="lede" data-i18n="zeigen_p"></p>
+    </div>
+  </section>
+
+  <section id="methode">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="n_methode"></p>
+      <h2 data-i18n="methode_h"></h2>
+    </div>
+    <div class="prose">
+      <p data-i18n="methode_p1"></p>
+      <p data-i18n="methode_p2"></p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="n_kontakt"></p>
+      <h2 data-i18n="kontakt_h"></h2>
+    </div>
+    <div class="contact">
+      <dl>
+        <dt data-i18n="k_inst"></dt><dd data-i18n="v_inst"></dd>
+        <dt data-i18n="k_lead"></dt><dd>Goda Plaum</dd>
+      </dl>
+      <dl>
+        <dt data-i18n="k_contact"></dt><dd><span id="mail">goda.plaum@ph-ludwigsburg.de</span><button class="copy" type="button" data-copy="#mail" data-i18n="copy"></button></dd>
+        <dt data-i18n="k_join"></dt><dd data-i18n="v_join"></dd>
+      </dl>
+    </div>
+  </section>
+
+  </div>
+</main>
+
+<footer>
+  <p data-i18n="foot1"></p>
+  <p data-i18n="foot2"></p>
+</footer>
+</div>
+
+<script>
+var T={
+de:{
+ inst:"Pädagogische Hochschule Ludwigsburg · Fach Kunst",
+ sub:"Embodied Learning in Visual Arts<br>Verkörpertes Lernen in der bildenden Kunst",
+ lede:"Ein Forschungsschwerpunkt zu der Frage, wie im Kunstunterricht mit dem Körper gelehrt und gelernt wird: mit Händen, Blicken, Haltungen, Material und Gesten, auch dort, wo Sprache fehlt.",
+ k_field:"Feld",v_field:"Kunstpädagogik der bildenden Kunst, Schule und Lehrkräftebildung",
+ k_approach:"Zugang",v_approach:"Videobasierte Unterrichtsforschung, multimodale Annotation, Grounded Theory",
+ k_core:"Kern",v_core:'Teilprojekt <a href="#kos">Kunst ohne Sprache</a>',
+ n_idee:"Ausgangspunkt",n_linien:"Forschungslinien",n_zeigen:"Zeigen",n_methode:"Material &amp; Methode",n_kontakt:"Team &amp; Kontakt",
+ idee_h:"Kunstunterricht ist Körperarbeit. Erforscht wird er meist als Sprache.",
+ idee_p1:"Wer im Kunstunterricht etwas erklärt, zeigt: auf ein Detail, auf das Blatt, auf den eigenen Körper. Wer eine Technik vermittelt, führt sie vor. Wer Material erkundet, denkt mit den Händen. Die Forschung zu <em>embodied learning</em> hat diese Einsicht für Tanz, Musik und Theater, für die Museumspädagogik und für das Zeichnen kleiner Kinder ausgearbeitet. Für den schulischen Unterricht in bildender Kunst fehlen empirische, videobasierte Studien fast vollständig.",
+ idee_p2:"ELIVA setzt an dieser Lücke an. Der Schwerpunkt bündelt Studien, die verkörperte Formen des Lehrens und Lernens im Kunstunterricht systematisch beschreiben und in ihrer didaktischen Bedeutung untersuchen. Er verbindet dabei zwei Diskurse, die selten zusammengeführt werden: die deutschsprachige Leibphänomenologie und ästhetische Bildung auf der einen Seite, die angloamerikanische Forschung zu <em>embodied cognition</em> und Multimodalität auf der anderen.",
+ idee_p3:'Das erste und derzeit zentrale Teilprojekt ist <a href="#kos">Kunst ohne Sprache</a>. Es untersucht, wie Lehrkräfte in Klassen mit neu zugewanderten Schüler:innen ohne gemeinsame Sprache unterrichten, und hat dabei eine Typologie des Zeigens entwickelt, die zum Ausgangspunkt weiterer Studien geworden ist.',
+ linien_h:"Ein laufendes Projekt und drei Qualifikationsarbeiten",
+ st_run:"laufend",st_ma:"Masterarbeit",
+ kos_h:"Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht",
+ kos_p:"In Vorbereitungsklassen (VKL) an Grund- und Realschulen in der Region wird Kunstunterricht untersucht, in dem Lehrkräfte und Schüler:innen über keine gemeinsame Sprache verfügen. Aus dem Material wurde nach der Grounded Theory eine Typologie von fünf Zeigearten entwickelt, die beschreibt, mit welchen körperlichen Mitteln Aufgaben, Techniken und Qualitäten vermittelt werden.",
+ kos_orig:"Gefördert von der Heidehof Stiftung.",
+ ma1_h:"Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+ ma1_p:"Wie erkennen Lehrkräfte ohne gemeinsame Sprache, wo Schüler:innen im bildnerischen Prozess stehen, und wie greifen sie körperlich ein?",
+ ma1_orig:"",
+ ma2_h:"Formen non-verbaler Reflexion im Kunstunterricht",
+ ma2_p:"Wie werden Zwischenbesprechung, Rückblick und Bewertung gestaltet, wenn nicht gesprochen werden kann?",
+ ma2_orig:"",
+ ma3_h:"Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+ ma3_p:"Vertiefung der fünften Zeigeart und Prüfung der Kategorie an weiterem Material.",
+ ma3_orig:"",
+ zeigen_eyebrow:"Zentrales Ergebnis aus Kunst ohne Sprache",
+ zeigen_h:"Eine Typologie des Zeigens",
+ zeigen_p:"Aus dem Videomaterial wurde eine Typologie von fünf Zeigearten entwickelt. Sie wird in einem Beitrag zur Veröffentlichung vorbereitet; Definitionen und Beispiele folgen mit dem Erscheinen des Artikels.",
+ methode_h:"Unterrichtsforschung mit Video",
+ methode_p1:"Die Unterrichtsstunden werden mit zwei bis drei Kameras gleichzeitig aufgenommen und als Split-Screen ausgewertet, sodass Lehrkraft, Klasse und Arbeitsplatz zugleich im Blick sind. Das Videomaterial wird multimodal annotiert.",
+ methode_p2:"Das methodische Vorgehen folgt der Grounded Theory: Kategorien werden offen am Material entwickelt, an weiteren Stunden geschärft und geprüft.",
+ kontakt_h:"Projektleitung",
+ k_inst:"Institution",v_inst:"Pädagogische Hochschule Ludwigsburg, Fach Kunst",
+ k_lead:"Leitung",k_contact:"Kontakt",copy:"kopieren",copied:"kopiert",
+ k_join:"Mitarbeit",v_join:"Themen für Abschlussarbeiten im Rahmen von ELIVA werden fortlaufend vergeben.",
+ foot1:"ELIVA · Embodied Learning in Visual Arts · PH Ludwigsburg",foot2:"Stand: Oktober 2026"
+},
+en:{
+ inst:"Ludwigsburg University of Education · Art Education",
+ sub:"Embodied Learning in Visual Arts",
+ lede:"A research programme on how teaching and learning in the art classroom happen through the body: with hands, gaze, posture, material and gesture, including where no shared language is available.",
+ k_field:"Field",v_field:"Visual art education, schools and teacher education",
+ k_approach:"Approach",v_approach:"Video-based classroom research, multimodal annotation, grounded theory",
+ k_core:"Core",v_core:'Sub-project <a href="#kos">Art without Language</a>',
+ n_idee:"Starting point",n_linien:"Research lines",n_zeigen:"Showing",n_methode:"Material &amp; method",n_kontakt:"Team &amp; contact",
+ idee_h:"Art teaching is bodily work. It is mostly studied as language.",
+ idee_p1:"Whoever explains something in the art classroom points: at a detail, at the sheet of paper, at their own body. Whoever teaches a technique demonstrates it. Whoever explores material thinks with the hands. Research on <em>embodied learning</em> has developed this insight for dance, music and drama, for museum education and for young children's drawing. For school-based teaching in the visual arts, empirical, video-based studies are almost entirely missing.",
+ idee_p2:"ELIVA addresses this gap. The programme brings together studies that systematically describe embodied forms of teaching and learning in the art classroom and examine their didactic significance. It connects two discourses that are rarely brought together: German-language phenomenology of the lived body and aesthetic education on the one side, and Anglo-American research on <em>embodied cognition</em> and multimodality on the other.",
+ idee_p3:'The first and currently central sub-project is <a href="#kos">Art without Language</a>. It examines how teachers teach in classes with newly arrived pupils without a shared language, and in doing so has developed a typology of showing that has become the starting point for further studies.',
+ linien_h:"One ongoing project and three master\u2019s theses",
+ st_run:"ongoing",st_ma:"Master\u2019s thesis",
+ kos_h:"Art without Language: non-verbal forms of teaching in the art classroom",
+ kos_p:"The project studies art lessons in preparatory classes (Vorbereitungsklassen) at primary and lower secondary schools in the region, where teachers and pupils share no common language. Following grounded theory, a typology of five kinds of showing was developed from the material, describing the bodily means by which tasks, techniques and qualities are conveyed.",
+ kos_orig:"German title: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Funded by the Heidehof Stiftung.",
+ ma1_h:"Diagnosis and intervention in the non-verbal teaching of artistic practice",
+ ma1_p:"How do teachers without a shared language recognise where pupils stand in the artistic process, and how do they intervene bodily?",
+ ma1_orig:"German title: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+ ma2_h:"Forms of non-verbal reflection in the art classroom",
+ ma2_p:"How are interim discussions, reviews and assessment organised when speaking is not possible?",
+ ma2_orig:"German title: Formen non-verbaler Reflexion im Kunstunterricht",
+ ma3_h:"Showing as a non-verbal form of conveying inner (thinking and decision-making) processes in artistic work in the art classroom",
+ ma3_p:"Deepening the fifth kind of showing and testing the category against further material.",
+ ma3_orig:"German title: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+ zeigen_eyebrow:"Central finding from Art without Language",
+ zeigen_h:"A typology of showing",
+ zeigen_p:"A typology of five kinds of showing was developed from the video material. It is being prepared for publication; definitions and examples will follow once the article appears.",
+ methode_h:"Classroom research with video",
+ methode_p1:"Lessons are recorded with two to three cameras simultaneously and analysed as a split screen, so that teacher, class and workplace are in view at the same time. The video material is annotated multimodally.",
+ methode_p2:"The methodological approach follows grounded theory: categories are developed openly from the material, then sharpened and tested on further lessons.",
+ kontakt_h:"Project lead",
+ k_inst:"Institution",v_inst:"Ludwigsburg University of Education, Department of Art",
+ k_lead:"Lead",k_contact:"Contact",copy:"copy",copied:"copied",
+ k_join:"Get involved",v_join:"Topics for final theses within ELIVA are assigned on an ongoing basis.",
+ foot1:"ELIVA · Embodied Learning in Visual Arts · Ludwigsburg University of Education",foot2:"Last updated: October 2026"
+},
+es:{
+ inst:"Facultad de Educación de Ludwigsburg · Educación Artística",
+ sub:"Embodied Learning in Visual Arts<br>Aprendizaje corporeizado en las artes visuales",
+ lede:"Un programa de investigación sobre cómo se enseña y se aprende con el cuerpo en la clase de arte: con las manos, la mirada, la postura, el material y los gestos, también allí donde falta una lengua común.",
+ k_field:"Campo",v_field:"Pedagogía de las artes visuales, escuela y formación docente",
+ k_approach:"Enfoque",v_approach:"Investigación de aula basada en vídeo, anotación multimodal, teoría fundamentada",
+ k_core:"Núcleo",v_core:'Subproyecto <a href="#kos">Arte sin idioma</a>',
+ n_idee:"Punto de partida",n_linien:"Líneas de investigación",n_zeigen:"Mostrar",n_methode:"Material y método",n_kontakt:"Equipo y contacto",
+ idee_h:"La clase de arte es trabajo corporal. Casi siempre se investiga como lenguaje.",
+ idee_p1:"Quien explica algo en la clase de arte, señala: un detalle, la hoja, el propio cuerpo. Quien transmite una técnica, la demuestra. Quien explora un material, piensa con las manos. La investigación sobre <em>embodied learning</em> ha desarrollado esta idea para la danza, la música y el teatro, para la educación en museos y para el dibujo infantil. Para la enseñanza escolar de las artes visuales faltan casi por completo estudios empíricos basados en vídeo.",
+ idee_p2:"ELIVA parte de esta laguna. El programa reúne estudios que describen de forma sistemática las formas corporeizadas de enseñar y aprender en la clase de arte y examinan su relevancia didáctica. Conecta dos discursos que rara vez se ponen en relación: la fenomenología del cuerpo vivido y la educación estética de tradición alemana, por un lado, y la investigación angloamericana sobre <em>embodied cognition</em> y multimodalidad, por otro.",
+ idee_p3:'El primer subproyecto, y actualmente el central, es <a href="#kos">Arte sin idioma</a>. Examina cómo enseña el profesorado en clases con alumnado recién llegado sin una lengua común y ha desarrollado una tipología del mostrar que se ha convertido en punto de partida de nuevos estudios.',
+ linien_h:"Un proyecto en curso y tres trabajos de máster",
+ st_run:"en curso",st_ma:"Trabajo de máster",
+ kos_h:"Arte sin idioma: formas no verbales de enseñanza en la clase de arte",
+ kos_p:"Se investiga la clase de arte en clases preparatorias (Vorbereitungsklassen) de escuelas primarias y secundarias de la región, en las que profesorado y alumnado no comparten ninguna lengua. A partir del material, y siguiendo la teoría fundamentada, se desarrolló una tipología de cinco formas de mostrar que describe con qué medios corporales se transmiten tareas, técnicas y cualidades.",
+ kos_orig:"Título original: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Financiado por la Heidehof Stiftung.",
+ ma1_h:"Diagnóstico e intervención en la enseñanza no verbal de la práctica artística",
+ ma1_p:"¿Cómo reconoce el profesorado, sin una lengua común, en qué punto del proceso artístico se encuentra el alumnado, y cómo interviene corporalmente?",
+ ma1_orig:"Título original: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+ ma2_h:"Formas de reflexión no verbal en la clase de arte",
+ ma2_p:"¿Cómo se organizan las puestas en común, la revisión y la evaluación cuando no se puede hablar?",
+ ma2_orig:"Título original: Formen non-verbaler Reflexion im Kunstunterricht",
+ ma3_h:"El mostrar como forma no verbal de transmitir procesos internos (de pensamiento y decisión) en la creación artística en la clase de arte",
+ ma3_p:"Profundización de la quinta forma de mostrar y comprobación de la categoría con material adicional.",
+ ma3_orig:"Título original: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+ zeigen_eyebrow:"Resultado central de Arte sin idioma",
+ zeigen_h:"Una tipología del mostrar",
+ zeigen_p:"A partir del material de vídeo se desarrolló una tipología de cinco formas de mostrar. Se está preparando para su publicación; las definiciones y los ejemplos se añadirán cuando aparezca el artículo.",
+ methode_h:"Investigación de aula con vídeo",
+ methode_p1:"Las sesiones se graban simultáneamente con dos o tres cámaras y se analizan en pantalla dividida, de modo que docente, grupo y puesto de trabajo quedan a la vista al mismo tiempo. El material de vídeo se anota de forma multimodal.",
+ methode_p2:"El procedimiento metodológico sigue la teoría fundamentada: las categorías se desarrollan de manera abierta a partir del material y se afinan y comprueban en nuevas sesiones.",
+ kontakt_h:"Dirección del proyecto",
+ k_inst:"Institución",v_inst:"Facultad de Educación de Ludwigsburg, Departamento de Arte",
+ k_lead:"Dirección",k_contact:"Contacto",copy:"copiar",copied:"copiado",
+ k_join:"Colaboración",v_join:"Se asignan de forma continua temas para trabajos de fin de estudios en el marco de ELIVA.",
+ foot1:"ELIVA · Embodied Learning in Visual Arts · Facultad de Educación de Ludwigsburg",foot2:"Actualizado: octubre de 2026"
+}
+};
+(function(){
+  var cur='de';
+  function apply(l){
+    cur=l;var d=T[l];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(k in d)el.innerHTML=d[k]});
+    document.documentElement.lang=l;
+    document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===l))});
+    try{localStorage.setItem('eliva-lang',l)}catch(e){}
+    mark();
+  }
+  document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang)})});
+  var start='de';
+  try{var saved=localStorage.getItem('eliva-lang');if(saved&&T[saved])start=saved;else{var nav=(navigator.language||'').slice(0,2);if(T[nav])start=nav}}catch(e){}
+
+  var links=[].slice.call(document.querySelectorAll('nav.side a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  function mark(){
+    var y=window.scrollY+140,c=secs[0];
+    secs.forEach(function(s){if(s.offsetTop<=y)c=s});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+c.id)});
+  }
+  window.addEventListener('scroll',mark,{passive:true});
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.querySelector(b.dataset.copy),txt=t.textContent;
+      function done(){b.textContent=T[cur].copied;setTimeout(function(){b.textContent=T[cur].copy},1500)}
+      function fallback(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else{fallback()}
+    });
+  });
+  apply(start);
+})();
+</script>
+
+</body>
+</html>
