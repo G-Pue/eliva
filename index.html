@@ -7,8 +7,8 @@
 <meta property="og:title" content="ELIVA – Embodied Learning in Visual Arts">
 <meta property="og:description" content="Forschungsschwerpunkt zu verkörpertem Lehren und Lernen im Kunstunterricht, PH Ludwigsburg.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://eliva.org/">
-<link rel="canonical" href="https://eliva.org/">
+<meta property="og:url" content="https://eliva.art/">
+<link rel="canonical" href="https://eliva.art/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%239A9A9A'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-weight='700' font-size='18' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
 <title>ELIVA – Embodied Learning in Visual Arts</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
@@ -18,10 +18,11 @@
   --page:#FAFAFA;        /* Seitenhintergrund */
   --sheet:#FFFFFF;       /* Blatt */
   --fg:#444444;          /* Fließtext */
-  --fg-soft:#979797;     /* Titelgrau */
-  --fg-muted:#777777;
+  --fg-soft:#8C8C8C;     /* Titelgrau, große Überschriften (Kontrast 3,3:1) */
+  --fg-soft-text:#757575;/* Grau für kleinen Text und Links (Kontrast 4,6:1) */
+  --fg-muted:#757575;
   --line:#E6E6E6;
-  --accent:#00667B;      /* Petrol: aktive Navigation, Links */
+  --accent:#757575;      /* Grau für Navigation und Links, barrierefrei */
   --slate:#9A9A9A;       /* Logo-Punkt, grau */
   --sans:"Roboto",Arial,Helvetica,sans-serif;
   color-scheme:light;
@@ -34,7 +35,7 @@ a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-width:960px;margin:0 auto;background:var(--sheet);padding-block:0 3rem;padding-inline:clamp(16px,5vw,70px);min-height:100vh}
 h1,h2,h3{margin:0;font-weight:400;text-wrap:balance;line-height:1.2}
-h2{font-size:clamp(1.5rem,3vw,2.05rem);text-transform:uppercase;color:var(--fg)}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;text-transform:uppercase;color:var(--fg-soft);text-align:center;letter-spacing:.02em}
 h3{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;color:var(--fg)}
 p{margin:0}
 .lede{font-size:1rem}
@@ -69,7 +70,7 @@ nav.side a.on{color:var(--accent);border-bottom-color:var(--accent)}
 main{display:block}
 .content{min-width:0}
 section{padding-block:2.6rem 2.8rem;border-top:1px solid var(--line);scroll-margin-top:1rem}
-.sec-head{display:grid;gap:.9rem;margin-bottom:1.5rem;max-width:62ch}
+.sec-head{display:grid;gap:.6rem;margin-bottom:1.8rem;justify-items:center;text-align:center}
 .prose{max-width:62ch;display:grid;gap:1.1rem}
 
 /* Forschungslinien */
@@ -78,7 +79,7 @@ section{padding-block:2.6rem 2.8rem;border-top:1px solid var(--line);scroll-marg
 .line:first-child{border-top:0;padding-top:0}
 .line.main .body{padding-left:0}
 .status{font-size:.78rem;text-transform:uppercase;color:var(--fg-muted);padding-top:.2rem}
-.status.run{color:var(--accent);font-weight:700}
+.status.run{color:var(--fg-soft-text);font-weight:700}
 .line .body{display:grid;gap:.5rem}
 .line .body p{max-width:62ch}
 .line .body h3{font-size:1rem}
@@ -102,6 +103,13 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
   .line{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.tp h3{margin-bottom:.5rem}
+.tp ul{list-style:none;margin:0;padding:0;display:grid;gap:.3rem}
+.sub.first{margin-top:0}
+.sub{margin-top:1.8rem;display:grid;gap:.6rem;max-width:62ch}
+.sub h3{color:var(--fg-soft-text)}
+#kos>.orig{margin-top:1.6rem}
+.sec-head .status{padding-top:0}
 </style>
 
 
@@ -114,15 +122,13 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
     <a class="brand" href="#top" aria-label="ELIVA – zum Seitenanfang"></a>
     <div class="top-right">
       <span class="inst" data-i18n="inst"></span>
-<nav class="side" aria-label="Abschnitte">
-    <ol>
-      <li><a href="#idee" data-i18n="n_idee"></a></li>
-      <li><a href="#linien" data-i18n="n_linien"></a></li>
-      <li><a href="#zeigen" data-i18n="n_zeigen"></a></li>
-      <li><a href="#methode" data-i18n="n_methode"></a></li>
-      <li><a href="#kontakt" data-i18n="n_kontakt"></a></li>
-    </ol>
-  </nav>
+      <nav class="side" aria-label="Abschnitte">
+        <ol>
+          <li><a href="#kos" data-i18n="n_kos"></a></li>
+          <li><a href="#qualifikationsarbeiten" data-i18n="n_qa"></a></li>
+          <li><a href="#kontakt" data-i18n="n_kontakt"></a></li>
+        </ol>
+      </nav>
       <div class="langs" role="group" aria-label="Sprache / Language / Idioma">
         <button type="button" data-lang="de" aria-pressed="true">DE</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -136,11 +142,13 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
     </div>
     <div class="hero-meta">
       <p class="lede" data-i18n="lede"></p>
-      <dl>
-        <dt data-i18n="k_field"></dt><dd data-i18n="v_field"></dd>
-        <dt data-i18n="k_approach"></dt><dd data-i18n="v_approach"></dd>
-        <dt data-i18n="k_core"></dt><dd data-i18n="v_core"></dd>
-      </dl>
+      <div class="tp">
+        <h3 data-i18n="tp_h"></h3>
+        <ul>
+          <li data-i18n="tp_kos"></li>
+          <li data-i18n="tp_qa"></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -148,32 +156,43 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
 <main>
   <div class="content">
 
-  <section id="idee">
+  <section id="kos">
     <div class="sec-head">
-      <p class="eyebrow" data-i18n="n_idee"></p>
-      <h2 data-i18n="idee_h"></h2>
+      <p class="status run" data-i18n="st_run"></p>
+      <h2 data-i18n="kos_h"></h2>
     </div>
-    <div class="prose">
-      <p data-i18n="idee_p1"></p>
-      <p data-i18n="idee_p2"></p>
-      <p data-i18n="idee_p3"></p>
+    <div class="sub first">
+      <h3 data-i18n="h_start"></h3>
+      <div class="prose"><p data-i18n="start_p"></p></div>
     </div>
+    <div class="sub">
+      <h3 data-i18n="h_gap"></h3>
+      <div class="prose"><p data-i18n="gap_p"></p></div>
+    </div>
+    <div class="sub">
+      <h3 data-i18n="h_frage"></h3>
+      <div class="prose"><p data-i18n="frage_p"></p></div>
+    </div>
+    <div class="sub">
+      <h3 data-i18n="h_methode"></h3>
+      <div class="prose"><p data-i18n="methode_p"></p></div>
+    </div>
+    <div class="sub">
+      <h3 data-i18n="h_ergebnis"></h3>
+      <div class="prose"><p data-i18n="ergebnis_p"></p></div>
+    </div>
+    <div class="sub">
+      <h3 data-i18n="h_plan"></h3>
+      <div class="prose"><p data-i18n="plan_p"></p></div>
+    </div>
+    <p class="orig" data-i18n="kos_orig"></p>
   </section>
 
-  <section id="linien">
+  <section id="qualifikationsarbeiten">
     <div class="sec-head">
-      <p class="eyebrow" data-i18n="n_linien"></p>
-      <h2 data-i18n="linien_h"></h2>
+      <h2 data-i18n="qa_h"></h2>
     </div>
     <div class="lines">
-      <article class="line main" id="kos">
-        <div><span class="status run" data-i18n="st_run"></span></div>
-        <div class="body">
-          <h3 data-i18n="kos_h"></h3>
-          <p data-i18n="kos_p"></p>
-          <p class="orig" data-i18n="kos_orig"></p>
-        </div>
-      </article>
       <article class="line">
         <div><span class="status" data-i18n="st_ma"></span></div>
         <div class="body">
@@ -201,28 +220,8 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
     </div>
   </section>
 
-  <section id="zeigen">
-    <div class="sec-head">
-      <p class="eyebrow" data-i18n="zeigen_eyebrow"></p>
-      <h2 data-i18n="zeigen_h"></h2>
-      <p class="lede" data-i18n="zeigen_p"></p>
-    </div>
-  </section>
-
-  <section id="methode">
-    <div class="sec-head">
-      <p class="eyebrow" data-i18n="n_methode"></p>
-      <h2 data-i18n="methode_h"></h2>
-    </div>
-    <div class="prose">
-      <p data-i18n="methode_p1"></p>
-      <p data-i18n="methode_p2"></p>
-    </div>
-  </section>
-
   <section id="kontakt">
     <div class="sec-head">
-      <p class="eyebrow" data-i18n="n_kontakt"></p>
       <h2 data-i18n="kontakt_h"></h2>
     </div>
     <div class="contact">
@@ -246,122 +245,153 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
 </footer>
 </div>
 
+
 <script>
 var T={
-de:{
- inst:"Pädagogische Hochschule Ludwigsburg · Fach Kunst",
- sub:"Embodied Learning in Visual Arts<br>Verkörpertes Lernen in der bildenden Kunst",
- lede:"Ein Forschungsschwerpunkt zu der Frage, wie im Kunstunterricht mit dem Körper gelehrt und gelernt wird: mit Händen, Blicken, Haltungen, Material und Gesten, auch dort, wo Sprache fehlt.",
- k_field:"Feld",v_field:"Kunstpädagogik der bildenden Kunst, Schule und Lehrkräftebildung",
- k_approach:"Zugang",v_approach:"Videobasierte Unterrichtsforschung, multimodale Annotation, Grounded Theory",
- k_core:"Kern",v_core:'Teilprojekt <a href="#kos">Kunst ohne Sprache</a>',
- n_idee:"Ausgangspunkt",n_linien:"Forschungslinien",n_zeigen:"Zeigen",n_methode:"Material &amp; Methode",n_kontakt:"Team &amp; Kontakt",
- idee_h:"Kunstunterricht ist Körperarbeit. Erforscht wird er meist als Sprache.",
- idee_p1:"Wer im Kunstunterricht etwas erklärt, zeigt: auf ein Detail, auf das Blatt, auf den eigenen Körper. Wer eine Technik vermittelt, führt sie vor. Wer Material erkundet, denkt mit den Händen. Die Forschung zu <em>embodied learning</em> hat diese Einsicht für Tanz, Musik und Theater, für die Museumspädagogik und für das Zeichnen kleiner Kinder ausgearbeitet. Für den schulischen Unterricht in bildender Kunst fehlen empirische, videobasierte Studien fast vollständig.",
- idee_p2:"ELIVA setzt an dieser Lücke an. Der Schwerpunkt bündelt Studien, die verkörperte Formen des Lehrens und Lernens im Kunstunterricht systematisch beschreiben und in ihrer didaktischen Bedeutung untersuchen. Er verbindet dabei zwei Diskurse, die selten zusammengeführt werden: die deutschsprachige Leibphänomenologie und ästhetische Bildung auf der einen Seite, die angloamerikanische Forschung zu <em>embodied cognition</em> und Multimodalität auf der anderen.",
- idee_p3:'Das erste und derzeit zentrale Teilprojekt ist <a href="#kos">Kunst ohne Sprache</a>. Es untersucht, wie Lehrkräfte in Klassen mit neu zugewanderten Schüler:innen ohne gemeinsame Sprache unterrichten, und hat dabei eine Typologie des Zeigens entwickelt, die zum Ausgangspunkt weiterer Studien geworden ist.',
- linien_h:"Ein laufendes Projekt und drei Qualifikationsarbeiten",
- st_run:"laufend",st_ma:"Masterarbeit",
- kos_h:"Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht",
- kos_p:"In Vorbereitungsklassen (VKL) an Grund- und Realschulen in der Region wird Kunstunterricht untersucht, in dem Lehrkräfte und Schüler:innen über keine gemeinsame Sprache verfügen. Aus dem Material wurde nach der Grounded Theory eine Typologie von fünf Zeigearten entwickelt, die beschreibt, mit welchen körperlichen Mitteln Aufgaben, Techniken und Qualitäten vermittelt werden.",
- kos_orig:"Gefördert von der Heidehof Stiftung.",
- ma1_h:"Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
- ma1_p:"Wie erkennen Lehrkräfte ohne gemeinsame Sprache, wo Schüler:innen im bildnerischen Prozess stehen, und wie greifen sie körperlich ein?",
- ma1_orig:"",
- ma2_h:"Formen non-verbaler Reflexion im Kunstunterricht",
- ma2_p:"Wie werden Zwischenbesprechung, Rückblick und Bewertung gestaltet, wenn nicht gesprochen werden kann?",
- ma2_orig:"",
- ma3_h:"Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
- ma3_p:"Vertiefung der fünften Zeigeart und Prüfung der Kategorie an weiterem Material.",
- ma3_orig:"",
- zeigen_eyebrow:"Zentrales Ergebnis aus Kunst ohne Sprache",
- zeigen_h:"Eine Typologie des Zeigens",
- zeigen_p:"Aus dem Videomaterial wurde eine Typologie von fünf Zeigearten entwickelt. Sie wird in einem Beitrag zur Veröffentlichung vorbereitet; Definitionen und Beispiele folgen mit dem Erscheinen des Artikels.",
- methode_h:"Unterrichtsforschung mit Video",
- methode_p1:"Die Unterrichtsstunden werden mit zwei bis drei Kameras gleichzeitig aufgenommen und als Split-Screen ausgewertet, sodass Lehrkraft, Klasse und Arbeitsplatz zugleich im Blick sind. Das Videomaterial wird multimodal annotiert.",
- methode_p2:"Das methodische Vorgehen folgt der Grounded Theory: Kategorien werden offen am Material entwickelt, an weiteren Stunden geschärft und geprüft.",
- kontakt_h:"Projektleitung",
- k_inst:"Institution",v_inst:"Pädagogische Hochschule Ludwigsburg, Fach Kunst",
- k_lead:"Leitung",k_contact:"Kontakt",copy:"kopieren",copied:"kopiert",
- k_join:"Mitarbeit",v_join:"Themen für Abschlussarbeiten im Rahmen von ELIVA werden fortlaufend vergeben.",
- foot1:"ELIVA · Embodied Learning in Visual Arts · PH Ludwigsburg",foot2:"Stand: Oktober 2026"
-},
-en:{
- inst:"Ludwigsburg University of Education · Art Education",
- sub:"Embodied Learning in Visual Arts",
- lede:"A research programme on how teaching and learning in the art classroom happen through the body: with hands, gaze, posture, material and gesture, including where no shared language is available.",
- k_field:"Field",v_field:"Visual art education, schools and teacher education",
- k_approach:"Approach",v_approach:"Video-based classroom research, multimodal annotation, grounded theory",
- k_core:"Core",v_core:'Sub-project <a href="#kos">Art without Language</a>',
- n_idee:"Starting point",n_linien:"Research lines",n_zeigen:"Showing",n_methode:"Material &amp; method",n_kontakt:"Team &amp; contact",
- idee_h:"Art teaching is bodily work. It is mostly studied as language.",
- idee_p1:"Whoever explains something in the art classroom points: at a detail, at the sheet of paper, at their own body. Whoever teaches a technique demonstrates it. Whoever explores material thinks with the hands. Research on <em>embodied learning</em> has developed this insight for dance, music and drama, for museum education and for young children's drawing. For school-based teaching in the visual arts, empirical, video-based studies are almost entirely missing.",
- idee_p2:"ELIVA addresses this gap. The programme brings together studies that systematically describe embodied forms of teaching and learning in the art classroom and examine their didactic significance. It connects two discourses that are rarely brought together: German-language phenomenology of the lived body and aesthetic education on the one side, and Anglo-American research on <em>embodied cognition</em> and multimodality on the other.",
- idee_p3:'The first and currently central sub-project is <a href="#kos">Art without Language</a>. It examines how teachers teach in classes with newly arrived pupils without a shared language, and in doing so has developed a typology of showing that has become the starting point for further studies.',
- linien_h:"One ongoing project and three master\u2019s theses",
- st_run:"ongoing",st_ma:"Master\u2019s thesis",
- kos_h:"Art without Language: non-verbal forms of teaching in the art classroom",
- kos_p:"The project studies art lessons in preparatory classes (Vorbereitungsklassen) at primary and lower secondary schools in the region, where teachers and pupils share no common language. Following grounded theory, a typology of five kinds of showing was developed from the material, describing the bodily means by which tasks, techniques and qualities are conveyed.",
- kos_orig:"German title: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Funded by the Heidehof Stiftung.",
- ma1_h:"Diagnosis and intervention in the non-verbal teaching of artistic practice",
- ma1_p:"How do teachers without a shared language recognise where pupils stand in the artistic process, and how do they intervene bodily?",
- ma1_orig:"German title: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
- ma2_h:"Forms of non-verbal reflection in the art classroom",
- ma2_p:"How are interim discussions, reviews and assessment organised when speaking is not possible?",
- ma2_orig:"German title: Formen non-verbaler Reflexion im Kunstunterricht",
- ma3_h:"Showing as a non-verbal form of conveying inner (thinking and decision-making) processes in artistic work in the art classroom",
- ma3_p:"Deepening the fifth kind of showing and testing the category against further material.",
- ma3_orig:"German title: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
- zeigen_eyebrow:"Central finding from Art without Language",
- zeigen_h:"A typology of showing",
- zeigen_p:"A typology of five kinds of showing was developed from the video material. It is being prepared for publication; definitions and examples will follow once the article appears.",
- methode_h:"Classroom research with video",
- methode_p1:"Lessons are recorded with two to three cameras simultaneously and analysed as a split screen, so that teacher, class and workplace are in view at the same time. The video material is annotated multimodally.",
- methode_p2:"The methodological approach follows grounded theory: categories are developed openly from the material, then sharpened and tested on further lessons.",
- kontakt_h:"Project lead",
- k_inst:"Institution",v_inst:"Ludwigsburg University of Education, Department of Art",
- k_lead:"Lead",k_contact:"Contact",copy:"copy",copied:"copied",
- k_join:"Get involved",v_join:"Topics for final theses within ELIVA are assigned on an ongoing basis.",
- foot1:"ELIVA · Embodied Learning in Visual Arts · Ludwigsburg University of Education",foot2:"Last updated: October 2026"
-},
-es:{
- inst:"Facultad de Educación de Ludwigsburg · Educación Artística",
- sub:"Embodied Learning in Visual Arts<br>Aprendizaje corporeizado en las artes visuales",
- lede:"Un programa de investigación sobre cómo se enseña y se aprende con el cuerpo en la clase de arte: con las manos, la mirada, la postura, el material y los gestos, también allí donde falta una lengua común.",
- k_field:"Campo",v_field:"Pedagogía de las artes visuales, escuela y formación docente",
- k_approach:"Enfoque",v_approach:"Investigación de aula basada en vídeo, anotación multimodal, teoría fundamentada",
- k_core:"Núcleo",v_core:'Subproyecto <a href="#kos">Arte sin idioma</a>',
- n_idee:"Punto de partida",n_linien:"Líneas de investigación",n_zeigen:"Mostrar",n_methode:"Material y método",n_kontakt:"Equipo y contacto",
- idee_h:"La clase de arte es trabajo corporal. Casi siempre se investiga como lenguaje.",
- idee_p1:"Quien explica algo en la clase de arte, señala: un detalle, la hoja, el propio cuerpo. Quien transmite una técnica, la demuestra. Quien explora un material, piensa con las manos. La investigación sobre <em>embodied learning</em> ha desarrollado esta idea para la danza, la música y el teatro, para la educación en museos y para el dibujo infantil. Para la enseñanza escolar de las artes visuales faltan casi por completo estudios empíricos basados en vídeo.",
- idee_p2:"ELIVA parte de esta laguna. El programa reúne estudios que describen de forma sistemática las formas corporeizadas de enseñar y aprender en la clase de arte y examinan su relevancia didáctica. Conecta dos discursos que rara vez se ponen en relación: la fenomenología del cuerpo vivido y la educación estética de tradición alemana, por un lado, y la investigación angloamericana sobre <em>embodied cognition</em> y multimodalidad, por otro.",
- idee_p3:'El primer subproyecto, y actualmente el central, es <a href="#kos">Arte sin idioma</a>. Examina cómo enseña el profesorado en clases con alumnado recién llegado sin una lengua común y ha desarrollado una tipología del mostrar que se ha convertido en punto de partida de nuevos estudios.',
- linien_h:"Un proyecto en curso y tres trabajos de máster",
- st_run:"en curso",st_ma:"Trabajo de máster",
- kos_h:"Arte sin idioma: formas no verbales de enseñanza en la clase de arte",
- kos_p:"Se investiga la clase de arte en clases preparatorias (Vorbereitungsklassen) de escuelas primarias y secundarias de la región, en las que profesorado y alumnado no comparten ninguna lengua. A partir del material, y siguiendo la teoría fundamentada, se desarrolló una tipología de cinco formas de mostrar que describe con qué medios corporales se transmiten tareas, técnicas y cualidades.",
- kos_orig:"Título original: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Financiado por la Heidehof Stiftung.",
- ma1_h:"Diagnóstico e intervención en la enseñanza no verbal de la práctica artística",
- ma1_p:"¿Cómo reconoce el profesorado, sin una lengua común, en qué punto del proceso artístico se encuentra el alumnado, y cómo interviene corporalmente?",
- ma1_orig:"Título original: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
- ma2_h:"Formas de reflexión no verbal en la clase de arte",
- ma2_p:"¿Cómo se organizan las puestas en común, la revisión y la evaluación cuando no se puede hablar?",
- ma2_orig:"Título original: Formen non-verbaler Reflexion im Kunstunterricht",
- ma3_h:"El mostrar como forma no verbal de transmitir procesos internos (de pensamiento y decisión) en la creación artística en la clase de arte",
- ma3_p:"Profundización de la quinta forma de mostrar y comprobación de la categoría con material adicional.",
- ma3_orig:"Título original: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
- zeigen_eyebrow:"Resultado central de Arte sin idioma",
- zeigen_h:"Una tipología del mostrar",
- zeigen_p:"A partir del material de vídeo se desarrolló una tipología de cinco formas de mostrar. Se está preparando para su publicación; las definiciones y los ejemplos se añadirán cuando aparezca el artículo.",
- methode_h:"Investigación de aula con vídeo",
- methode_p1:"Las sesiones se graban simultáneamente con dos o tres cámaras y se analizan en pantalla dividida, de modo que docente, grupo y puesto de trabajo quedan a la vista al mismo tiempo. El material de vídeo se anota de forma multimodal.",
- methode_p2:"El procedimiento metodológico sigue la teoría fundamentada: las categorías se desarrollan de manera abierta a partir del material y se afinan y comprueban en nuevas sesiones.",
- kontakt_h:"Dirección del proyecto",
- k_inst:"Institución",v_inst:"Facultad de Educación de Ludwigsburg, Departamento de Arte",
- k_lead:"Dirección",k_contact:"Contacto",copy:"copiar",copied:"copiado",
- k_join:"Colaboración",v_join:"Se asignan de forma continua temas para trabajos de fin de estudios en el marco de ELIVA.",
- foot1:"ELIVA · Embodied Learning in Visual Arts · Facultad de Educación de Ludwigsburg",foot2:"Actualizado: octubre de 2026"
-}
+ "de": {
+  "inst": "Pädagogische Hochschule Ludwigsburg · Fach Kunst",
+  "sub": "Embodied Learning in Visual Arts<br>Verkörpertes Lernen in der bildenden Kunst",
+  "lede": "Kunst ist Ausdruck unserer sinnlichen Verbindung mit der Welt. Wir erleben und gestalten sie mit unserem ganzen Körper. Lehren und Lernen im Feld der Kunst muss daher auf unseren Körper bezogen sein und kann nur mit ihm und durch ihn geschehen. Das Projekt ELIVA widmet sich der Erforschung und Entwicklung körperbezogener Lehr- und Lernformen in schulischen und außerschulischen Kontexten. Ziel ist es, den kunstpädagogischen Blick auf den Menschen als leibliches Wesen zu richten und Kunstunterricht und Kunstvermittlung von dieser Perspektive aus neu zu denken.",
+  "n_kontakt": "Team &amp; Kontakt",
+  "st_run": "laufend",
+  "st_ma": "Masterarbeit",
+  "kos_h": "Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht",
+  "kos_orig": "Gefördert von der Heidehof Stiftung.",
+  "ma1_h": "Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+  "ma1_p": "Wie erkennen Lehrkräfte ohne gemeinsame Sprache, wo Schüler:innen im bildnerischen Prozess stehen, und wie greifen sie körperlich ein?",
+  "ma1_orig": "",
+  "ma2_h": "Formen non-verbaler Reflexion im Kunstunterricht",
+  "ma2_p": "Wie werden Zwischenbesprechung, Rückblick und Bewertung gestaltet, wenn nicht gesprochen werden kann?",
+  "ma2_orig": "",
+  "ma3_h": "Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+  "ma3_p": "Vertiefung der fünften Zeigeart und Prüfung der Kategorie an weiterem Material.",
+  "ma3_orig": "",
+  "kontakt_h": "Projektleitung",
+  "k_inst": "Institution",
+  "v_inst": "Pädagogische Hochschule Ludwigsburg, Fach Kunst",
+  "k_lead": "Leitung",
+  "k_contact": "Kontakt",
+  "copy": "kopieren",
+  "copied": "kopiert",
+  "k_join": "Mitarbeit",
+  "v_join": "Themen für Abschlussarbeiten im Rahmen von ELIVA werden fortlaufend vergeben.",
+  "foot1": "ELIVA · Embodied Learning in Visual Arts · PH Ludwigsburg",
+  "foot2": "Stand: Oktober 2026",
+  "n_kos": "Kunst ohne Sprache",
+  "n_qa": "Qualifikationsarbeiten",
+  "tp_h": "Teilprojekte",
+  "tp_kos": "Forschungsprojekt <a href=\"#kos\">Kunst ohne Sprache</a>",
+  "tp_qa": "<a href=\"#qualifikationsarbeiten\">Qualifikationsarbeiten</a>",
+  "h_frage": "Fragestellung",
+  "frage_p": "Welche non-verbalen Hilfestellungen sind im Kunstunterricht möglich, um bildnerische Denk-, Entscheidungs- und Handlungsprozesse anzustoßen? Und welche fachspezifischen Schwierigkeiten treten bei den verschiedenen Formen non-verbaler Vermittlung auf?",
+  "h_methode": "Setting und Methode",
+  "h_ergebnis": "Ergebnisse",
+  "qa_h": "Qualifikationsarbeiten",
+  "h_start": "Ausgangspunkt",
+  "start_p": "An deutschen Schulen lernen immer mehr Kinder und Jugendliche, die dem Unterricht sprachlich nicht oder nur teilweise folgen können. Für sie bedeutet das weniger Erfolgserlebnisse, geringere Lernfortschritte und Erfahrungen des Ausgeschlossenseins. Das Fach Kunst bietet hier besondere Möglichkeiten: Bildnerisches Arbeiten ist an Wahrnehmung, Material und körperliches Handeln gebunden und lässt sich daher weitgehend ohne Worte vermitteln. Es eröffnet zugleich Wege des Ausdrucks jenseits der Verbalsprache und stärkt Teilhabe und Selbstwirksamkeit.",
+  "h_gap": "Forschungslücke",
+  "gap_p": "Gesten und Zeigehandlungen sind in der Linguistik, den Kognitionswissenschaften und der Pädagogik gut untersucht, aber fast immer in Verbindung mit Sprache oder außerhalb künstlerischer Lehr-Lern-Situationen. Für den Kunstunterricht liegen einzelne Beobachtungen vor, jedoch keine Systematik, wie Lehrkräfte bildnerische Prozesse und Entscheidungen vermitteln können, wenn Sprache kaum zur Verfügung steht.",
+  "methode_p": "Das Projekt läuft seit 2024 in mehreren Strängen. In der ersten Phase entwickelten Lehramtsstudierende der PH Ludwigsburg in einem Seminar Kunstunterricht für Vorbereitungsklassen, führten ihn an Schulen der Primar- und Sekundarstufe durch und videografierten ihn. Die Auswertung folgt der konstruktivistischen Grounded Theory nach Charmaz: Die Videos werden mit zwei bis drei Kameraperspektiven aufgenommen, multimodal annotiert und in iterativen Durchgängen kodiert; Schlüsselszenen werden transkribiert, Kategorien am Material entwickelt, mit bestehenden Konzepten aus Linguistik und Pädagogik abgeglichen und an weiteren Einheiten geprüft.",
+  "ergebnis_p": "Aus dem Material wurde eine Typologie non-verbaler Zeigearten entwickelt, die beschreibt, mit welchen körperlichen Mitteln Lehrkräfte Werkinhalt, Werktechnik und Gestaltung vermitteln. Sie knüpft an Konzepte der Gesten- und Zeigeforschung an, weist aber Merkmale auf, die spezifisch für den Kunstunterricht sind. Daneben zeichnen sich erste Erkenntnisse zu den Beziehungen der Zeigearten untereinander sowie zu Gelingensbedingungen und Gefahren non-verbaler Vermittlung ab. Die Ergebnisse werden in einem Beitrag zur Veröffentlichung vorbereitet; Definitionen und Beispiele folgen mit dem Erscheinen des Artikels.",
+  "h_plan": "Geplant: Lehrkräftefortbildungen zu non-verbalen Vermittlungsformen im Kunstunterricht",
+  "plan_p": "Die Typologie und die Gelingensbedingungen sollen in evaluierte Fortbildungen für Kunstlehrkräfte überführt werden, damit sich ihre Nützlichkeit im Unterrichtsalltag erweist; davon könnten auch Lernende ohne Sprachbarriere profitieren."
+ },
+ "en": {
+  "inst": "Ludwigsburg University of Education · Art Education",
+  "sub": "Embodied Learning in Visual Arts",
+  "lede": "Art is an expression of our sensory connection with the world. We experience and shape it with our whole body. Teaching and learning in the field of art must therefore relate to our body and can only happen with it and through it. The ELIVA project is dedicated to researching and developing body-related forms of teaching and learning in school and out-of-school contexts. Its aim is to direct the art-educational gaze towards the human being as an embodied being, and to rethink art teaching and art education from this perspective.",
+  "n_kontakt": "Team &amp; contact",
+  "st_run": "ongoing",
+  "st_ma": "Master’s thesis",
+  "kos_h": "Art without Language: non-verbal forms of teaching in the art classroom",
+  "kos_orig": "German title: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Funded by the Heidehof Stiftung.",
+  "ma1_h": "Diagnosis and intervention in the non-verbal teaching of artistic practice",
+  "ma1_p": "How do teachers without a shared language recognise where pupils stand in the artistic process, and how do they intervene bodily?",
+  "ma1_orig": "German title: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+  "ma2_h": "Forms of non-verbal reflection in the art classroom",
+  "ma2_p": "How are interim discussions, reviews and assessment organised when speaking is not possible?",
+  "ma2_orig": "German title: Formen non-verbaler Reflexion im Kunstunterricht",
+  "ma3_h": "Showing as a non-verbal form of conveying inner (thinking and decision-making) processes in artistic work in the art classroom",
+  "ma3_p": "Deepening the fifth kind of showing and testing the category against further material.",
+  "ma3_orig": "German title: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+  "kontakt_h": "Project lead",
+  "k_inst": "Institution",
+  "v_inst": "Ludwigsburg University of Education, Department of Art",
+  "k_lead": "Lead",
+  "k_contact": "Contact",
+  "copy": "copy",
+  "copied": "copied",
+  "k_join": "Get involved",
+  "v_join": "Topics for final theses within ELIVA are assigned on an ongoing basis.",
+  "foot1": "ELIVA · Embodied Learning in Visual Arts · Ludwigsburg University of Education",
+  "foot2": "Last updated: October 2026",
+  "n_kos": "Art without Language",
+  "n_qa": "Master’s theses",
+  "tp_h": "Sub-projects",
+  "tp_kos": "Research project <a href=\"#kos\">Art without Language</a>",
+  "tp_qa": "<a href=\"#qualifikationsarbeiten\">Master’s theses</a>",
+  "h_frage": "Research questions",
+  "frage_p": "Which non-verbal forms of support are possible in the art classroom to initiate artistic processes of thinking, deciding and acting? And which subject-specific difficulties arise with the different forms of non-verbal teaching?",
+  "h_methode": "Setting and method",
+  "h_ergebnis": "Results",
+  "qa_h": "Master’s theses",
+  "h_start": "Starting point",
+  "start_p": "German schools are teaching a growing number of children and young people who cannot follow lessons in German, or only partly. For them this means fewer experiences of success, slower learning progress and experiences of exclusion. The subject of art offers particular opportunities here: artistic work is bound to perception, material and bodily action and can therefore largely be taught without words. At the same time it opens up ways of expression beyond spoken language and strengthens participation and self-efficacy.",
+  "h_gap": "Research gap",
+  "gap_p": "Gestures and acts of showing are well studied in linguistics, the cognitive sciences and education, but almost always in connection with speech or outside artistic teaching and learning situations. For the art classroom there are individual observations, but no systematic account of how teachers can convey artistic processes and decisions when language is scarcely available.",
+  "methode_p": "The project has been running since 2024 in several strands. In the first phase, student teachers at Ludwigsburg University of Education developed art lessons for preparatory classes in a seminar, taught them at primary and lower secondary schools and recorded them on video. The analysis follows constructivist grounded theory after Charmaz: the videos are recorded from two to three camera perspectives, annotated multimodally and coded in iterative rounds; key scenes are transcribed, categories are developed from the material, compared with existing concepts from linguistics and education, and tested on further lessons.",
+  "ergebnis_p": "From the material, a typology of non-verbal kinds of showing was developed that describes the bodily means by which teachers convey the content, technique and design of artistic work. It draws on concepts from gesture and showing research, but has features that are specific to the art classroom. In addition, first insights are emerging into the relations between the kinds of showing and into the conditions for success and the pitfalls of non-verbal teaching. The results are being prepared for publication; definitions and examples will follow once the article appears.",
+  "h_plan": "Planned: professional development for teachers on non-verbal forms of teaching in the art classroom",
+  "plan_p": "The typology and the conditions for success are to be translated into evaluated professional development courses for art teachers, so that their usefulness proves itself in everyday teaching; learners without a language barrier could benefit as well."
+ },
+ "es": {
+  "inst": "Facultad de Educación de Ludwigsburg · Educación Artística",
+  "sub": "Embodied Learning in Visual Arts<br>Aprendizaje corporeizado en las artes visuales",
+  "lede": "El arte es expresión de nuestra conexión sensorial con el mundo. Lo experimentamos y lo creamos con todo nuestro cuerpo. Enseñar y aprender en el campo del arte debe, por tanto, referirse a nuestro cuerpo y solo puede suceder con él y a través de él. El proyecto ELIVA se dedica a investigar y desarrollar formas corporales de enseñanza y aprendizaje en contextos escolares y extraescolares. Su objetivo es dirigir la mirada de la pedagogía del arte hacia el ser humano como ser corporal y repensar desde esta perspectiva la clase de arte y la mediación artística.",
+  "n_kontakt": "Equipo y contacto",
+  "st_run": "en curso",
+  "st_ma": "Trabajo de máster",
+  "kos_h": "Arte sin idioma: formas no verbales de enseñanza en la clase de arte",
+  "kos_orig": "Título original: Kunst ohne Sprache: non-verbale Vermittlungsformen im Kunstunterricht · Financiado por la Heidehof Stiftung.",
+  "ma1_h": "Diagnóstico e intervención en la enseñanza no verbal de la práctica artística",
+  "ma1_p": "¿Cómo reconoce el profesorado, sin una lengua común, en qué punto del proceso artístico se encuentra el alumnado, y cómo interviene corporalmente?",
+  "ma1_orig": "Título original: Diagnose und Intervention in der non-verbalen Vermittlung bildnerischer Praxis",
+  "ma2_h": "Formas de reflexión no verbal en la clase de arte",
+  "ma2_p": "¿Cómo se organizan las puestas en común, la revisión y la evaluación cuando no se puede hablar?",
+  "ma2_orig": "Título original: Formen non-verbaler Reflexion im Kunstunterricht",
+  "ma3_h": "El mostrar como forma no verbal de transmitir procesos internos (de pensamiento y decisión) en la creación artística en la clase de arte",
+  "ma3_p": "Profundización de la quinta forma de mostrar y comprobación de la categoría con material adicional.",
+  "ma3_orig": "Título original: Zeigen als non-verbale Vermittlungsform innerer (Denk- und Entscheidungs-)prozesse in der künstlerischen Gestaltung im Kunstunterricht",
+  "kontakt_h": "Dirección del proyecto",
+  "k_inst": "Institución",
+  "v_inst": "Facultad de Educación de Ludwigsburg, Departamento de Arte",
+  "k_lead": "Dirección",
+  "k_contact": "Contacto",
+  "copy": "copiar",
+  "copied": "copiado",
+  "k_join": "Colaboración",
+  "v_join": "Se asignan de forma continua temas para trabajos de fin de estudios en el marco de ELIVA.",
+  "foot1": "ELIVA · Embodied Learning in Visual Arts · Facultad de Educación de Ludwigsburg",
+  "foot2": "Actualizado: octubre de 2026",
+  "n_kos": "Arte sin idioma",
+  "n_qa": "Trabajos de máster",
+  "tp_h": "Subproyectos",
+  "tp_kos": "Proyecto de investigación <a href=\"#kos\">Arte sin idioma</a>",
+  "tp_qa": "<a href=\"#qualifikationsarbeiten\">Trabajos de máster</a>",
+  "h_frage": "Preguntas de investigación",
+  "frage_p": "¿Qué ayudas no verbales son posibles en la clase de arte para poner en marcha procesos plásticos de pensamiento, decisión y acción? ¿Y qué dificultades específicas de la asignatura surgen en las distintas formas de enseñanza no verbal?",
+  "h_methode": "Contexto y método",
+  "h_ergebnis": "Resultados",
+  "qa_h": "Trabajos de máster",
+  "h_start": "Punto de partida",
+  "start_p": "En las escuelas alemanas aprenden cada vez más niños, niñas y jóvenes que no pueden seguir las clases en alemán, o solo en parte. Para ellos esto significa menos experiencias de éxito, menores avances en el aprendizaje y experiencias de exclusión. La asignatura de arte ofrece aquí posibilidades especiales: el trabajo plástico está ligado a la percepción, al material y a la acción corporal y, por tanto, puede enseñarse en gran medida sin palabras. Al mismo tiempo abre vías de expresión más allá del lenguaje verbal y fortalece la participación y la autoeficacia.",
+  "h_gap": "Laguna de investigación",
+  "gap_p": "Los gestos y los actos de mostrar están bien estudiados en la lingüística, las ciencias cognitivas y la pedagogía, pero casi siempre en relación con el habla o fuera de situaciones artísticas de enseñanza y aprendizaje. Para la clase de arte existen observaciones aisladas, pero ninguna sistematización de cómo el profesorado puede transmitir procesos y decisiones plásticas cuando apenas se dispone de lenguaje.",
+  "methode_p": "El proyecto se desarrolla desde 2024 en varias líneas. En la primera fase, estudiantes de magisterio de la Facultad de Educación de Ludwigsburg diseñaron en un seminario clases de arte para clases preparatorias, las impartieron en escuelas de primaria y secundaria y las grabaron en vídeo. El análisis sigue la teoría fundamentada constructivista según Charmaz: los vídeos se graban desde dos o tres perspectivas de cámara, se anotan de forma multimodal y se codifican en rondas iterativas; se transcriben escenas clave, las categorías se desarrollan a partir del material, se contrastan con conceptos existentes de la lingüística y la pedagogía y se comprueban en nuevas sesiones.",
+  "ergebnis_p": "A partir del material se desarrolló una tipología de formas no verbales de mostrar que describe con qué medios corporales el profesorado transmite el contenido, la técnica y la configuración de la obra. Se apoya en conceptos de la investigación sobre gestos y sobre el mostrar, pero presenta rasgos específicos de la clase de arte. Además, se perfilan primeros resultados sobre las relaciones entre las formas de mostrar y sobre las condiciones de éxito y los riesgos de la enseñanza no verbal. Los resultados se están preparando para su publicación; las definiciones y los ejemplos se añadirán cuando aparezca el artículo.",
+  "h_plan": "Previsto: formación del profesorado en formas no verbales de enseñanza en la clase de arte",
+  "plan_p": "La tipología y las condiciones de éxito se trasladarán a cursos de formación evaluados para el profesorado de arte, de modo que su utilidad se demuestre en la práctica diaria; también el alumnado sin barrera lingüística podría beneficiarse de ello."
+ }
 };
 (function(){
   var cur='de';
@@ -396,6 +426,5 @@ es:{
   apply(start);
 })();
 </script>
-
 </body>
 </html>
