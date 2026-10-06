@@ -25,6 +25,7 @@
   --accent:#757575;      /* Grau für Navigation und Links, barrierefrei */
   --slate:#9A9A9A;       /* Logo-Punkt, grau */
   --sans:"Roboto",Arial,Helvetica,sans-serif;
+  --measure:min(46rem,100%);  /* Zeilenbreite des Fließtexts (ca. 82 Zeichen), unabhängig von der Schriftgröße des Elements */
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -33,7 +34,7 @@ body{background:var(--page);color:var(--fg);font-family:var(--sans);font-size:16
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;background:var(--sheet);padding-block:0 3rem;padding-inline:clamp(16px,5vw,70px);min-height:100vh}
+.wrap{max-width:1240px;margin:0 auto;background:var(--sheet);padding-block:0 3rem;padding-inline:clamp(16px,5vw,70px);min-height:100vh}
 h1,h2,h3{margin:0;font-weight:400;text-wrap:balance;line-height:1.2}
 h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;text-transform:uppercase;color:var(--fg-soft);text-align:center;letter-spacing:.02em}
 h3{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.01em;color:var(--fg)}
@@ -59,9 +60,9 @@ nav.side a.on{color:var(--accent);border-bottom-color:var(--accent)}
 
 /* Titelbereich */
 .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(2rem,4vw,3rem);display:grid;gap:2.2rem}
-.hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:700;text-transform:uppercase;color:var(--fg-soft);text-align:center;letter-spacing:.02em;line-height:1.15}
+.hero h1{font-size:clamp(2.8rem,6.5vw,4.8rem);font-weight:700;text-transform:uppercase;color:var(--fg-soft);text-align:center;letter-spacing:.02em;line-height:1.15}
 .hero h1 span{display:block;font-size:clamp(1rem,1.8vw,1.25rem);font-weight:400;text-transform:none;letter-spacing:0;margin-top:.8rem;color:var(--fg-soft)}
-.hero-meta{display:grid;gap:1.6rem;max-width:62ch}
+.hero-meta{display:grid;gap:1.6rem;max-width:var(--measure);margin-inline:auto}
 .hero-meta dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.2rem;margin:0;font-size:.95rem}
 .hero-meta dt{font-weight:700;text-transform:uppercase;font-size:.78rem;padding-top:.15rem;color:var(--fg)}
 .hero-meta dd{margin:0}
@@ -70,24 +71,25 @@ nav.side a.on{color:var(--accent);border-bottom-color:var(--accent)}
 main{display:block}
 .content{min-width:0}
 section{padding-block:2.6rem 2.8rem;border-top:1px solid var(--line);scroll-margin-top:1rem}
-.sec-head{display:grid;gap:.6rem;margin-bottom:1.8rem;justify-items:center;text-align:center}
-.prose{max-width:62ch;display:grid;gap:1.1rem}
+.sec-head{display:grid;gap:.6rem;margin-bottom:1.8rem;justify-items:center;text-align:center;margin-inline:auto}
+.sec-head h2{max-width:var(--measure)}
+.prose{max-width:var(--measure);display:grid;gap:1.1rem;margin-inline:auto}
 
 /* Forschungslinien */
-.lines{display:grid;gap:0}
+.lines{display:grid;gap:0;max-width:calc(var(--measure) + 150px + 1.5rem);margin-inline:auto}
 .line{display:grid;grid-template-columns:150px minmax(0,1fr);gap:.6rem 1.5rem;padding-block:1.3rem;border-top:1px solid var(--line)}
 .line:first-child{border-top:0;padding-top:0}
 .line.main .body{padding-left:0}
 .status{font-size:.78rem;text-transform:uppercase;color:var(--fg-muted);padding-top:.2rem}
 .status.run{color:var(--fg-soft-text);font-weight:700}
 .line .body{display:grid;gap:.5rem}
-.line .body p{max-width:62ch}
+.line .body p{max-width:var(--measure)}
 .line .body h3{font-size:1rem}
 .orig{font-size:.85rem;color:var(--fg-muted)}
 .orig:empty{display:none}
 
 /* Kontakt */
-.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem 2.5rem;max-width:62ch}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem 2.5rem;max-width:var(--measure);margin-inline:auto}
 .contact dl{margin:0;display:grid;gap:.3rem}
 .contact dt{font-weight:700;text-transform:uppercase;font-size:.78rem;margin-top:.6rem}
 .contact dt:first-child{margin-top:0}
@@ -106,9 +108,9 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
 .tp h3{margin-bottom:.5rem}
 .tp ul{list-style:none;margin:0;padding:0;display:grid;gap:.3rem}
 .sub.first{margin-top:0}
-.sub{margin-top:1.8rem;display:grid;gap:.6rem;max-width:62ch}
+.sub{margin-top:1.8rem;display:grid;gap:.6rem;max-width:var(--measure);margin-inline:auto}
 .sub h3{color:var(--fg-soft-text)}
-#kos>.orig{margin-top:1.6rem}
+#kos>.orig{margin-top:1.6rem;max-width:var(--measure);margin-inline:auto}
 .sec-head .status{padding-top:0}
 </style>
 
@@ -227,10 +229,10 @@ footer p{font-size:.8rem;color:var(--fg-muted);text-transform:uppercase}
     <div class="contact">
       <dl>
         <dt data-i18n="k_inst"></dt><dd data-i18n="v_inst"></dd>
-        <dt data-i18n="k_lead"></dt><dd>Goda Plaum</dd>
+        <dt data-i18n="k_lead"></dt><dd>Prof. Dr. Goda Plaum</dd>
       </dl>
       <dl>
-        <dt data-i18n="k_contact"></dt><dd><span id="mail">goda.plaum@ph-ludwigsburg.de</span><button class="copy" type="button" data-copy="#mail" data-i18n="copy"></button></dd>
+        <dt data-i18n="k_contact"></dt><dd><span id="mail" data-u="goda.plaum" data-d="ph-ludwigsburg" data-t="de" aria-live="polite"></span><button class="copy" type="button" data-copy="#mail" data-i18n="copy"></button></dd>
         <dt data-i18n="k_join"></dt><dd data-i18n="v_join"></dd>
       </dl>
     </div>
@@ -423,6 +425,8 @@ var T={
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else{fallback()}
     });
   });
+  var mail=document.getElementById('mail');
+  if(mail){var addr=mail.dataset.u+String.fromCharCode(64)+mail.dataset.d+'.'+mail.dataset.t;var a=document.createElement('a');a.href='mailto:'+addr;a.textContent=addr;mail.appendChild(a);}
   apply(start);
 })();
 </script>
